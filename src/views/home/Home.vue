@@ -63,6 +63,11 @@ export default {
     this.getGoods("new");
     this.getGoods("sell");
   },
+  mounted(){
+    this.$bus.$on('itemImageLoad',()=>{
+      this.$refs.scroll.refresh()
+    })
+  },
   methods: {
     getMultidata() {
       getHomeMultidata().then((res) => {
@@ -100,7 +105,6 @@ export default {
     },
     loadmore(){
       this.getGoods(this.currentType)
-      this.$refs.scroll.scroll.refresh()
     }
   },
 };

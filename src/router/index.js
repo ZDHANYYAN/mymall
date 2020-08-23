@@ -10,6 +10,7 @@ VueRouter.prototype.push = function push (location) {
 
 const Home = () => import('views/home/Home.vue')
 const Category = () => import('views/category/Category.vue')
+const Detail = () => import('views/detail/Detail.vue')
 const ShopCart = () => import('views/shopcart/ShopCart.vue')
 const Profile = () => import('views/profile/Profile.vue')
 
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/profile',
     component: Profile
+  },
+  {
+    path: '/detail/:id',
+    component: Detail
   }
 ]
 
