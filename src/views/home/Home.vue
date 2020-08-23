@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import NavBar from "components/common/narbar/NavBar";
+import NavBar from "components/common/navbar/NavBar";
 import Scroll from "components/common/scroll/Scroll";
 import GoodsList from "components/content/goods/GoodsList";
 import TabControl from "components/content/tabControl/TabControl";
@@ -39,6 +39,7 @@ export default {
     Scroll,
     BackTop,
   },
+
   data() {
     return {
       banners: [],
@@ -50,6 +51,7 @@ export default {
       },
       currentType: "pop",
       isShow: false,
+      saveY:0
     };
   },
   computed: {
@@ -57,6 +59,7 @@ export default {
       return this.goods[this.currentType].list;
     },
   },
+
   created() {
     this.getMultidata();
     this.getGoods("pop");
@@ -68,6 +71,7 @@ export default {
       this.$refs.scroll.refresh()
     })
   },
+
   methods: {
     getMultidata() {
       getHomeMultidata().then((res) => {

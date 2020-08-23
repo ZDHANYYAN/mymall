@@ -1,17 +1,12 @@
 <template>
-  <h2>详情页{{iid}}</h2>
+  <h1>详情页</h1>
 </template>
 
 <script>
 export default {
-  name:'Detail',
-  data(){
-    return {
-      iid : null
-    }
-  },
-  created(){
-    this.iid = this.$route.params.id
+  name:"Detail",
+  components:{
+
   }
 }
 </script>
